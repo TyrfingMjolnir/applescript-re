@@ -1,3 +1,5 @@
 on run argv
-  do shell script "echo " & (item 1 of argv) as string & " >> /tmp/some_file.txt"
+	repeat with argn in argv
+		do shell script "echo \"" & ( current date ) & " " & ( argn ) & "\" >> /tmp/some_file.txt"
+	end repeat
 end run
